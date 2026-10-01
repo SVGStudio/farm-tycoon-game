@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tycoon de ferme HTML5 pour CrazyGames - cultivez, gérez les animaux et développez votre exploitation."
+    />
+    <title>Farm Tycoon</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CrazyGames</p>
+          <h1>Farm Tycoon</h1>
+        </div>
+
+        <div class="header-stats">
+          <div class="stat-box money">
+            <span class="label">Argent</span>
+            <strong id="moneyDisplay">0 €</strong>
+          </div>
+          <div class="stat-box income">
+            <span class="label">Revenu/s</span>
+            <strong id="incomeDisplay">0</strong>
+          </div>
+          <div class="stat-box level">
+            <span class="label">Niveau</span>
+            <strong id="levelDisplay">1</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <aside class="panel left-panel">
+          <section class="panel-section">
+            <div class="section-head">
+              <h2>Ferme</h2>
+              <button id="quickCollectBtn" class="secondary-btn">Récolter +25 €</button>
+            </div>
+            <div class="farm-grid" id="farmGrid"></div>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-head">
+              <h2>Objectifs</h2>
+            </div>
+            <div id="objectivesList" class="objective-list"></div>
+          </section>
+        </aside>
+
+        <section class="center-panel">
+          <div class="hero-card">
+            <div>
+              <p class="eyebrow">Exploitations</p>
+              <h2>Développez votre ferme</h2>
+            </div>
+            <div class="xp-bar-wrap">
+              <div class="xp-bar">
+                <div id="xpFill"></div>
+              </div>
+              <span id="xpText">0 / 100 XP</span>
+            </div>
+            <div class="boost-panel">
+              <button id="rewardAdBtn" class="boost-btn">Bonus revenu x2 • 60 s</button>
+              <span id="boostStatus">Aucun bonus actif</span>
+            </div>
+          </div>
+
+          <div class="shop-layout">
+            <section class="panel-section shop-card">
+              <div class="section-head"><h2>Animaux</h2></div>
+              <div id="animalsList" class="shop-list"></div>
+            </section>
+
+            <section class="panel-section shop-card">
+              <div class="section-head"><h2>Bâtiments</h2></div>
+              <div id="buildingsList" class="shop-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <aside class="panel right-panel">
+          <section class="panel-section">
+            <div class="section-head"><h2>Résumé</h2></div>
+            <ul class="summary-list">
+              <li><span>Parcelles</span><strong id="plotsSummary">0</strong></li>
+              <li><span>Poules</span><strong id="chickenSummary">0</strong></li>
+              <li><span>Vaches</span><strong id="cowSummary">0</strong></li>
+              <li><span>Cochons</span><strong id="pigSummary">0</strong></li>
+              <li><span>Moutons</span><strong id="sheepSummary">0</strong></li>
+            </ul>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-head"><h2>Actions</h2></div>
+            <div class="action-buttons">
+              <button id="saveBtn" class="secondary-btn">Sauvegarder</button>
+              <button id="resetBtn" class="danger-btn">Reset</button>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
